@@ -110,14 +110,18 @@ function render() {
       : "";
 
 grid.innerHTML = `
-  <div class="header" id="header-name">Name${nameArrow}</div>
-  <div class="header" id="header-weight">Weight (g)${weightArrow}</div>
-  <div class="header">'A blueberry, is a blueberry, is a blueberry'</div>
+  <div class="header" id="header-name">
+  <span class="underline-on-hover">Name${nameArrow}</span>
+  </div>
+  <div class="header" id="header-weight">
+  <span class="underline-on-hover">Weight (g)${weightArrow}</span>
+  </div>
+  <div class="header"><em>‘A blueberry, is a blueberry, is a blueberry’</em></div>
 `;
 
   objects.forEach(obj => {
     grid.insertAdjacentHTML("beforeend", `
-      <div class="cell name">'<em>${obj.name}</em>'</div>
+      <div class="cell name">‘<em>${obj.name}</em>’</div>
       <div class="cell">${obj.weight}</div>
       <div class="cell image">
         <img src="${obj.image}" alt="${obj.name}">
